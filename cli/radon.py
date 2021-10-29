@@ -464,6 +464,7 @@ class RadonApplication():
         except (IOError, pickle.PickleError):
             # Init a new RadonClient
             client = self.create_client(args)
+        
         if args["--url"]:
             if client.url != args["--url"]:
                 # Init a fresh RadonClient
@@ -642,7 +643,7 @@ class RadonApplication():
             # Remove a specific value
             ex_val = metadata.get(meta_name, None)
             if isinstance(ex_val, list):
-                # Remove all elements of teh list with value val
+                # Remove all elements of the list with value val
                 metadata[meta_name] = [x for x in ex_val if x != meta_value]
             elif ex_val == meta_value:
                 # Remove a single element if that's the one we wanted to
@@ -765,7 +766,7 @@ class RadonApplication():
         """Save the status of the RadonClient for subsequent use."""
         if not os.path.exists(os.path.dirname(self.session_path)):
             os.makedirs(os.path.dirname(self.session_path))
-        # Load existing session, so as to keep current dir etc.
+        # Save existing session, so as to keep current dir etc.
         with open(self.session_path, "wb") as fh:
             pickle.dump(client, fh, pickle.HIGHEST_PROTOCOL)
 

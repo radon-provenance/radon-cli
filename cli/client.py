@@ -135,9 +135,9 @@ class RadonClient():
 
         """
         if not path:
-            path = u"/"
+            path = "/"
         elif not path.endswith("/"):
-            path = u"{}/".format(path)
+            path = "{}/".format(path)
         res = self.get_cdmi(path)
         if res.ok():
             cdmi_info = res.json()
@@ -146,9 +146,9 @@ class RadonClient():
                 return Response(406, u"{0} isn't a container".format(path))
             if cdmi_info["parentURI"] == "/" and cdmi_info["objectName"] == "Home":
                 # root
-                self._pwd = u"/"
+                self._pwd = "/"
             else:
-                self._pwd = u"{}{}/".format(
+                self._pwd = "{}{}".format(
                     cdmi_info["parentURI"], cdmi_info["objectName"]
                 )
             return Response(0, "ok")
@@ -404,7 +404,7 @@ class RadonClient():
         if not path:
             path = self.pwd()
         elif not path.endswith("/"):
-            path = u"{}/".format(path)
+            path = "{}/".format(path)
         return self.get_cdmi(path)
 
     def mkdir(self, path):

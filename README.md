@@ -206,3 +206,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+Parts of this work were supported by the Software Sustainability Institute with 
+funding from EPSRC, BBSRC, ESRC, NERC, AHRC, STFC and MRC through grant EP/S021779/1.
+
+
